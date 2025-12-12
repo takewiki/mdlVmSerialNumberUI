@@ -67,7 +67,7 @@ SerialNumberUI_left <- function() {
 SerialNumberUI_right <- function() {
   res <- tagList(
 
-    shiny::actionButton(inputId = 'btn_SerialNumber_view',label = 'Query'),
+    shiny::actionButton(inputId = 'btn_SerialNumber_view',label = 'Search'),
 
     tsui::mdl_download_button(id = 'dl_SerialNumber',label = 'Download')
 
