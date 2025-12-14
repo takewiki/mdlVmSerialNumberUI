@@ -1,6 +1,29 @@
 library(shiny)
 library(DT)
 library(shinyWidgets)
+SerialNumber_all_columns_ui <- c(
+    'Serial Number',
+    'Production Date',
+    'Sales OrderID',
+    'Delivery Location',
+    'Sales OrderID2',
+    'PN',
+    'Product Name',
+    'Sales OrderQty',
+    'Delivery Date',
+    'Total DeliveryQty'
+  )
+#设置默认值
+SerialNumber_default_columns_ui <- c(
+    'Serial Number',
+    'PN',
+    'Product Name',
+    'Sales OrderID',
+    'Delivery Location',
+    'Production Date'
+  )
+
+
 #' 序列号查询生成器界面
 #'
 #' @param colTitles  主页标题
@@ -75,7 +98,8 @@ SerialNumberUI_right <- function() {
     pickerInput(
       inputId = "SerialNumber_column_selector",
       label = "Selected Columns:",
-      choices = NULL,  # 将在服务器端动态更新
+      choices = SerialNumber_all_columns_ui,  # 将在服务器端动态更新
+      selected = SerialNumber_default_columns_ui,
       options = list(
         `actions-box` = TRUE,
         `selected-text-format` = "count > 3",
