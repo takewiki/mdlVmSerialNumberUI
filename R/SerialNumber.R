@@ -120,7 +120,8 @@ SerialNumberUI_right <- function() {
     actionButton("btn_SerialNumber_deselect_all", "Deselect All",
                  class = "btn-secondary btn-sm"),
     actionButton("btn_SerialNumber_defaultValue", "Default Value",
-                 class = "btn-primary btn-sm")
+                 class = "btn-primary btn-sm"),
+    verbatimTextOutput("SerialNumberselection_info")
 
 
 
