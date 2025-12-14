@@ -1,3 +1,6 @@
+library(shiny)
+library(DT)
+library(shinyWidgets)
 #' 序列号查询生成器界面
 #'
 #' @param colTitles  主页标题
@@ -42,7 +45,10 @@ SerialNumberUI_left <- function() {
 
 
   res <- tagList(
-    tsui::mdl_text2(id ='text_SerialNumber' ,label ='Serial Number',value = '')
+    tsui::mdl_text2(id ='text_SerialNumber' ,label ='Serial Number',value = ''),
+    shiny::actionButton(inputId = 'btn_SerialNumber_view',label = 'Search'),
+    tsui::mdl_download_button(id = 'dl_SerialNumber',label = 'Download')
+
 
 
 
@@ -66,10 +72,33 @@ SerialNumberUI_left <- function() {
 #' SerialNumberUI_bottom()
 SerialNumberUI_right <- function() {
   res <- tagList(
+    pickerInput(
+      inputId = "SerialNumber_column_selector",
+      label = "Selected Columns:",
+      choices = NULL,  # 将在服务器端动态更新
+      options = list(
+        `actions-box` = TRUE,
+        `selected-text-format` = "count > 3",
+        `count-selected-text` = "{0} Columns Seleced",
+        size = 10,
+        `live-search` = TRUE,
+        `live-search-style` = "contains"
+      ),
+      multiple = TRUE,
+      choicesOpt = list(
+        style = rep(("color: black;"), 100)
+      )
+    ),
+    # 全选/取消全选按钮
+    actionButton("btn_SerialNumber_select_all", "Select All",
+                 class = "btn-primary btn-sm",
+                 style = "margin-right: 5px;"),
+    actionButton("btn_SerialNumber_deselect_all", "Deselect All",
+                 class = "btn-secondary btn-sm"),
+    actionButton("btn_SerialNumber_defaultValue", "Default Value",
+                 class = "btn-primary btn-sm")
 
-    shiny::actionButton(inputId = 'btn_SerialNumber_view',label = 'Search'),
 
-    tsui::mdl_download_button(id = 'dl_SerialNumber',label = 'Download')
 
 
 
