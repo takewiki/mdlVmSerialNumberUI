@@ -89,7 +89,7 @@ SerialNumberUI_right <- function() {
 #' SerialNumberUI_bottom()
 SerialNumberUI_bottom <- function() {
   res <- tagList(
-    tsui::uiScrollX(tsui::mdl_dataTable(id = 'SerialNumber_resultView',label ='结果显示' ))
+    tsui::uiScrollX(tsui::mdl_dataTable(id = 'SerialNumber_resultView',label ='Result Show',lang='en' ))
 
   )
   return(res)
