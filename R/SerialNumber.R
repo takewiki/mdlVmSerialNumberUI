@@ -3,24 +3,29 @@ library(DT)
 library(shinyWidgets)
 SerialNumber_all_columns_ui <- c(
     'Serial Number',
-    'Production Date',
     'Sales OrderID',
-    'Delivery Location',
-    # 'Sales OrderID2',
     'PN',
     'Product Name',
-   # 'Sales OrderQty',
+    'Production Date',
+    'Delivery Location',
     'Delivery Date'
+
+    # 'Sales OrderID2',
+
+
+   # 'Sales OrderQty',
+
    # 'Total DeliveryQty'
   )
 #设置默认值
 SerialNumber_default_columns_ui <- c(
     'Serial Number',
+    'Sales OrderID',
     'PN',
     'Product Name',
-    'Sales OrderID',
-    'Delivery Location',
-    'Production Date'
+    'Production Date',
+    'Delivery Location'
+
   )
 
 
