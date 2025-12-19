@@ -6,12 +6,12 @@ SerialNumber_all_columns_ui <- c(
     'Production Date',
     'Sales OrderID',
     'Delivery Location',
-    'Sales OrderID2',
+    # 'Sales OrderID2',
     'PN',
     'Product Name',
-    'Sales OrderQty',
-    'Delivery Date',
-    'Total DeliveryQty'
+   # 'Sales OrderQty',
+    'Delivery Date'
+   # 'Total DeliveryQty'
   )
 #设置默认值
 SerialNumber_default_columns_ui <- c(
@@ -103,7 +103,7 @@ SerialNumberUI_right <- function() {
       options = list(
         `actions-box` = TRUE,
         `selected-text-format` = "count > 3",
-        `count-selected-text` = "{0} Columns Seleced",
+        `count-selected-text` = "Default Value",
         size = 10,
         `live-search` = TRUE,
         `live-search-style` = "contains"
@@ -117,11 +117,11 @@ SerialNumberUI_right <- function() {
     actionButton("btn_SerialNumber_select_all", "Select All",
                  class = "btn-primary btn-sm",
                  style = "margin-right: 5px;"),
-    actionButton("btn_SerialNumber_deselect_all", "Deselect All",
-                 class = "btn-secondary btn-sm"),
+    # actionButton("btn_SerialNumber_deselect_all", "Deselect All",
+    #              class = "btn-secondary btn-sm"),
     actionButton("btn_SerialNumber_defaultValue", "Default Value",
-                 class = "btn-primary btn-sm"),
-    verbatimTextOutput("SerialNumberselection_info")
+                 class = "btn-primary btn-sm")
+   # verbatimTextOutput("SerialNumberselection_info")
 
 
 
@@ -143,7 +143,9 @@ SerialNumberUI_right <- function() {
 #' SerialNumberUI_bottom()
 SerialNumberUI_bottom <- function() {
   res <- tagList(
-    tsui::uiScrollX(tsui::mdl_dataTable(id = 'SerialNumber_resultView',label ='Result Show',lang='en' ))
+    #tsui::uiScrollX(tsui::mdl_dataTable(id = 'SerialNumber_resultView',label ='Result Show',lang='en' ))
+
+    tsui::uiScrollX(tsui::mdl_dataTable(id = 'SerialNumber_resultView',label ='Result Show'))
 
   )
   return(res)
