@@ -106,7 +106,7 @@ SerialNumberUI_right <- function() {
       choices = SerialNumber_all_columns_ui,  # 将在服务器端动态更新
       selected = SerialNumber_default_columns_ui,
       options = list(
-        `actions-box` = TRUE,
+        `actions-box` = FALSE,
         `selected-text-format` = "count > 3",
         `count-selected-text` = "Default Value",
         size = 10,
