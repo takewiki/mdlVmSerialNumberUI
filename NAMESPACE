@@ -2,8 +2,8 @@
 
 export(SerialNumberExportUI)
 export(SerialNumberExportUI_bottom)
-export(SerialNumberExportUI_left)
 export(SerialNumberExportUI_right)
+export(SerialNumberExport_row_ui)
 export(SerialNumberUI)
 export(SerialNumberUI_bottom)
 export(SerialNumberUI_left)
